@@ -3,26 +3,74 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 function App() {
+  const pageStyles: React.CSSProperties = {
+    minHeight: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "radial-gradient(circle at top, #0f172a 0%, #020617 45%, #020617 100%)",
+    color: "#f8fafc",
+    padding: "24px",
+  };
+
+  const cardStyles: React.CSSProperties = {
+    width: "100%",
+    maxWidth: "960px",
+    borderRadius: "32px",
+    border: "1px solid rgba(148, 163, 184, 0.12)",
+    background: "rgba(15, 23, 42, 0.95)",
+    boxShadow: "0 40px 120px rgba(15, 23, 42, 0.35)",
+    padding: "48px 36px",
+  };
+
+  const buttonPrimary: React.CSSProperties = {
+    display: "inline-flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    minHeight: "48px",
+    borderRadius: "24px",
+    border: "none",
+    background: "#38bdf8",
+    color: "#0f172a",
+    fontWeight: 700,
+    textDecoration: "none",
+    cursor: "pointer",
+  };
+
+  const buttonSecondary: React.CSSProperties = {
+    display: "inline-flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    minHeight: "48px",
+    borderRadius: "24px",
+    border: "1px solid rgba(148, 163, 184, 0.3)",
+    background: "transparent",
+    color: "#e2e8f0",
+    fontWeight: 700,
+    textDecoration: "none",
+    cursor: "pointer",
+  };
+
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 text-slate-50">
-      <div className="mx-4 w-full max-w-4xl rounded-[32px] border border-slate-800 bg-slate-900/95 px-8 py-12 shadow-2xl shadow-slate-950/40 backdrop-blur-md sm:px-12 sm:py-16">
-        <div className="space-y-6 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-sky-400/80">Kaa Rada</p>
-          <h1 className="text-4xl font-semibold sm:text-5xl">Civic education for the culture.</h1>
-          <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-300">
+    <main style={pageStyles}>
+      <div style={cardStyles}>
+        <div style={{ textAlign: "center", gap: "24px", display: "grid" }}>
+          <span style={{ fontSize: "0.8rem", letterSpacing: "0.3em", color: "#7dd3fc", textTransform: "uppercase" }}>
+            Kaa Rada
+          </span>
+          <h1 style={{ margin: 0, fontSize: "3rem", lineHeight: 1.05, fontWeight: 800 }}>
+            Civic education for the culture.
+          </h1>
+          <p style={{ margin: "0 auto", maxWidth: "720px", fontSize: "1.1rem", lineHeight: 1.75, color: "#cbd5e1" }}>
             Track leaders, know your rights, and hold power accountable with tools built for Kenyan youth.
           </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <a
-              href="#"
-              className="rounded-2xl bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-400"
-            >
+          <div style={{ display: "grid", gap: "16px", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", marginTop: "1rem" }}>
+            <a href="#" style={buttonPrimary}>
               Explore the platform
             </a>
-            <a
-              href="#"
-              className="rounded-2xl border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-500 hover:text-white"
-            >
+            <a href="#" style={buttonSecondary}>
               Learn about civic rights
             </a>
           </div>
